@@ -1,38 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Mono&family=Rubik+Mono+One&display=swap");
 .App {
-  text-align: center;
+    font-family: "PT Mono", monospace;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#header_image {
+    position: relative;
+    height: 250px;
+    width: 100%;
+    margin-top: -100px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#header_image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1 {
+    position: relative;
+    font-family: "Rubik Mono One", monospace;
+    font-size: 70px !important;
+    color: #e95e3c;
+    padding-left: 20px;
+    margin-top: -20px !important;
+    z-index: 1;
 }
 
-.App-link {
-  color: #61dafb;
+h2 {
+    font-size: 20px;
+    padding-left: 5px;
+    border-bottom: 1px solid black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#blank_space {
+    height: 30px;
 }
