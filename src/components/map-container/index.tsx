@@ -1,5 +1,5 @@
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-
+import config from "../../config";
 interface MarkerPosition {
     lat: number;
     lng: number;
@@ -16,9 +16,7 @@ const MapContainer: React.FC<MapContainerProps> = ({ markerPosition }) => {
     };
 
     return (
-        <LoadScript
-            googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!}
-        >
+        <LoadScript googleMapsApiKey={config.googleMapsApiKey}>
             <GoogleMap
                 mapContainerStyle={mapStyles}
                 zoom={12}
