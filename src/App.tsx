@@ -2,6 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import MapContainer from "./components/map-container";
+import { StandaloneSearchBox } from "@react-google-maps/api";
 
 function App() {
     return (
@@ -55,6 +56,7 @@ function App() {
                         <header className="major">
                             <h2>Select Location</h2>
                         </header>
+
                         <MapContainer
                             markerPosition={{
                                 lat: 30.393181,
