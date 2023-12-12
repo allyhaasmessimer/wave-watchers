@@ -1,4 +1,9 @@
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import {
+    GoogleMap,
+    LoadScript,
+    Marker,
+    StandaloneSearchBox,
+} from "@react-google-maps/api";
 import config from "../../config";
 interface MarkerPosition {
     lat: number;
@@ -16,15 +21,24 @@ const MapContainer: React.FC<MapContainerProps> = ({ markerPosition }) => {
     };
 
     return (
-        <LoadScript googleMapsApiKey={config.googleMapsApiKey}>
-            <GoogleMap
-                mapContainerStyle={mapStyles}
-                zoom={12}
-                center={markerPosition}
-                mapTypeId={"terrain"}
-            >
-                <Marker position={markerPosition} />
-            </GoogleMap>
+        <LoadScript
+            googleMapsApiKey={config.googleMapsApiKey}
+            libraries={["places"]}
+        >
+            <>
+                <StandaloneSearchBox>
+                    <input />
+                </StandaloneSearchBox>
+
+                <GoogleMap
+                    mapContainerStyle={mapStyles}
+                    zoom={12}
+                    center={markerPosition}
+                    mapTypeId={"terrain"}
+                >
+                    <Marker position={markerPosition} />
+                </GoogleMap>
+            </>
         </LoadScript>
     );
 };
